@@ -1,0 +1,92 @@
+body {
+  background-image: url("../images/wall.jpg");
+  background-repeat: no-repeat;
+  ­webkit­background­size:cover;
+  ­moz­background­size:cover;
+  ­o­background­size:cover;
+  background­size:cover;    
+  background­position:center;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+#logo{
+	width: 200px;
+	margin: 1%;
+}
+
+.panorama .link{
+	height: 200px;
+	display: block;
+	background-color: #053546;
+	margin-bottom: 20px;
+} 
+
+.container{
+	margin-top: 50px;
+}
+
+.panorama.image1{
+	background: url('../images/bienal-logo.png');
+	background-size: 150%;
+	background-position: center;
+}
+.panorama.image2{
+	background: url('../images/foto0.jpg');
+	background-size: 150%;
+	background-position: center;
+}
+.panorama.image3{
+	background: url('../images/foto3.jpg');
+	background-size: 150%;
+	background-position: center;
+}
+.panorama.image4{
+	background: url('../images/foto5.jpg');
+	background-size: 150%;
+	background-position: center;
+}
+.panorama.image5{
+	background: url('../images/foto4.jpg');
+	background-size: 150%;
+	background-position: center;
+}
+.panorama.image6{
+	background: url('../images/foto2.jpg');
+	background-size: 150%;
+	background-position: center;
+}
+
+#logo1{
+	width: 35%;
+	margin: 0%;
+	padding-top: 4%;
+
+}
+
+#foter{
+	background-color: #00838f;
+
+}
+
+#contact{
+	padding-top: 1%;
+
+}
+
+.rightBtns{
+    float:right;
+}
+
+#btnIcon{
+    margin-left: 10px;
+}
+

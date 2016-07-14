@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/jquery.elevatezoom.js"></script>
+    <script src="../static/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="../static/css/materialize.min.css">
+    <link rel="stylesheet" href="../static/css/PlanoBienal.css">
+    <link href="../static/css/hover-min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{=URL('static','css/animate.css')}}">
+    <link rel="shortcut icon" href="{{=URL('static','images/favicon.ico')}}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Plano Bienal 2016</title>
+  </head>
+  <body>    
+    <div class="row">
+      <div class="card miColorCard">
+        <div class="card-content white-text">
+          <ul class="collapsible popout hide-on-large-only" data-collapsible="accordion">
+            <li>
+              <div class="collapsible-header animated bounceInLeft"><i class="material-icons">account_balance</i>Plano Completo</div>
+              <div class="collapsible-body"><img id ="mobileImg" align="center" src="../static/images/BIECompleto2.png"></div>
+            </li>
+            <li>
+              <div class="collapsible-header animated bounceInRight"><i class="material-icons">people</i>Escultores Internacionales</div>
+              <div class="collapsible-body"><img id ="mobileImg" align="center" src="../static/images/escultoresInt.png"></div>
+            </li>
+            <li>
+              <div class="collapsible-header animated bounceInLeft"><i class="material-icons">supervisor_account</i>Maestros Artesanos</div>
+              <div class="collapsible-body"><img id ="mobileImg" align="center" src="../static/images/maeArtesanos.png"></div>
+            </li>
+            <li>
+              <div class="collapsible-header animated bounceInRight"><i class="material-icons">person</i>Artesanos</div>
+              <div class="collapsible-body"><img id ="mobileImg" align="center" src="../static/images/artesanos.png"></div>
+            </li>
+            <li>
+              <div class="collapsible-header animated bounceInLeft"><i class="material-icons">palette</i>Escultura y Pintura</div>
+              <div class="collapsible-body"><img id ="mobileImg" align="center" src="../static/images/esculturapintura.png"></div>
+            </li>
+            <li>
+              <div class="collapsible-header animated bounceInRight"><i class="material-icons">widgets</i>Manualidades</div>
+              <div class="collapsible-body"><img id ="mobileImg" align="center" src="../static/images/manualidades.png"></div>
+            </li>
+            <li>
+              <div class="collapsible-header animated bounceInLeft"><i class="material-icons">av_timer</i>Originarios</div>
+              <div class="collapsible-body"><img id ="mobileImg" align="center" src="../static/images/originarios.png"></div>
+            </li>
+            <li>
+              <div class="collapsible-header animated bounceInRight"><i class="material-icons">verified_user</i>Oficiales</div>
+              <div class="collapsible-body"><img id ="mobileImg" align="center" src="../static/images/oficiales.png"></div>
+            </li>
+            <li>
+              <div class="collapsible-header animated bounceInLeft"><i class="material-icons">business</i>Empresas</div>
+              <div class="collapsible-body"><img id ="mobileImg" align="center" src="../static/images/empresas.png"></div>
+            </li>
+            <li>
+              <div class="collapsible-header animated bounceInRight"><i class="material-icons">store</i>Stands</div>
+              <div class="collapsible-body"><img id ="mobileImg" align="center" src="../static/images/stands.png"></div>
+            </li>
+            <li>
+              <div class="collapsible-header animated bounceInLeft"><i class="material-icons">restaurant</i>Patio de Comidas</div>
+              <div class="collapsible-body"><img id ="mobileImg" align="center" src="../static/images/patiodecomidas.png"></div>
+            </li>
+            <li>
+              <div class="collapsible-header animated bounceInRight"><i class="material-icons">transfer_within_a_station</i>Sanitarios</div>
+              <div class="collapsible-body"><img id ="mobileImg" align="center" src="../static/images/sanitarios.png"></div>
+            </li>
+          </ul>
+          <div class="centerImage hide-on-med-and-down animated flipInX" align="center">
+          <img id="zoom_07"  src="../static/images/BIELimpio2.png" data-zoom-image="../static/images/BIECompleto2.png"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="infor row">
+      <!--WEB-->
+        <a href="{{=URL('downloadPlano')}}" class="waves-effect waves-light miColorBotonFunction btn col s4 offset-s4 m2 offset-m5 bottom-btn tooltipped hvr-float" data-position="bottom" data-delay="50" data-tooltip="Descarga Plano de la Bienal"><i class="material-icons">picture_as_pdf</i></a>
+        <!--Mobile-->
+        <!-- <a href="javascript:openUrl()" class="waves-effect waves-light btn col s12 bottom-btn tooltipped animated bounceIn" data-position="bottom" data-delay="50" data-tooltip="Descarga Información"><i class="material-icons">picture_as_pdf</i></a> -->
+    </div>
+
+     <a href="{{=URL('default','index')}}" class="btn-floating btn-large waves-effect waves-light right miColorBotonHome fixed-btn-bottom "><i class="material-icons">home</i></a>
+   
+    </div>
+    <script>
+     $(document).ready(function(){
+        $('.collapsible').collapsible({
+          accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
+      });
+    </script>
+    <script>
+      $("#zoom_07").elevateZoom({
+        zoomType : "lens",
+        lensShape : "round",
+        lensSize    : 300,
+      });
+    </script>
+</body>
+</html>

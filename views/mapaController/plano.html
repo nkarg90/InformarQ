@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{{=URL('static','js/jquery.js')}}"></script>
+    <script src="{{=URL('static','js/jquery.elevatezoom.js')}}"></script>
+    <script src="{{=URL('static','js/planozoom.js')}}"></script>
+    <script src="{{=URL('static','js/materialize.min.js')}}"></script>
+    <script src="../static/js/jquery.zoomooz.min.js"></script>
+    <link rel="stylesheet" href="{{=URL('static','css/materialize.min.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','css/plano.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','css/animate.css')}}">
+    <link href="../static/css/hover-min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{=URL('static','images/favicon.ico')}}" type="image/x-icon">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Plano Interior Bienal 2016</title>
+  </head>
+  <body>
+      
+      
+      
+    <!--BOTONES FOOTER-->
+     <div class="container">
+     <div class="" id="cplano">
+      <div class="col s12">
+      <div class="animated bounceIn ">
+      <div id="mapa" align="center"><img src="{{=URL('static','images/BIELimpio2.png')}}" data-zoom-image="{{=URL('static','images/BIECompleto2.jpg')}}"/></div>   
+        </div>
+      </div>
+    </div>
+    </div>
+     <div class="infor row container">
+          <div class="col s4 offset-s4 m2 offset-m5">
+            <a href="{{=URL('downloadPlano')}}" class="waves-effect waves-light btn col s12 bottom-btn tooltipped animated bounceIn" data-position="bottom" data-delay="50" data-tooltip="Descarga Información"><i class="material-icons">picture_as_pdf</i></a>
+      </div>
+  
+    <!--Boton de Got to Home-->
+     <a href="{{=URL('default','index')}}" class="btn-floating btn-large waves-effect waves-light right red fixed-btn-bottom"><i class="material-icons">home</i></a>
+   
+    </div>
+
+  </body>
+  <script>$('img').elevateZoom({zoomType:"inner"});</script>
+</html>

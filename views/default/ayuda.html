@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/materialize.min.js"></script>
+    <script src="../static/js/app.js"></script>
+    <link rel="stylesheet" href="../static/css/materialize.min.css">
+    <link rel="stylesheet" href="../static/css/ayuda.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
+  <body class="container">    
+    
+    <!-- BOTONES DE UTILIZACION -->
+    <div class="container">
+      <div class="boton row">
+        <div class="row">
+          <div class="col s3">
+            <a class='dropdown-button btn' href='#' data-activates='dropdown1'><i class="material-icons">settings</i></a>
+              <!-- Dropdown Structure -->
+              <ul id='dropdown1' class='dropdown-content boton'>
+                <li><a href="#!">¿Que es InformarQ?</a></li>
+                <li><a href="#!">¿Como lo utilizo?</a></li>
+                <li><a href="#!">Configuracion</a></li>
+                <li><a href="#!">Acerca de</a></li>
+              </ul>
+          </div>
+          <div class="col s3"><a id="atras" class="waves-effect waves-light btn"><i class="material-icons">supervisor_account</i></a>
+          </div>
+          <div class="col s3"><a id="atras" class="waves-effect waves-light btn"><i class="material-icons">today</i></a>
+          </div>
+          <div class="col s3"><a id="atras" class="waves-effect waves-light btn"><i class="material-icons">room</i></a>
+          </div>
+        </div> 
+      </div>
+    </div>
+    
+    <script>
+    $('.dropdown-button').dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      constrain_width: false, // Does not change width of dropdown to that of the activator
+      hover: true, // Activate on hover
+      gutter: 0, // Spacing from edge
+      belowOrigin: false, // Displays dropdown below the button
+      alignment: 'left' // Displays dropdown with edge aligned to the left of button
+    }
+  );   
+    </script>
+
+
+
+  </body>
+</html>

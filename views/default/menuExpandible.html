@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../static/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="../static/css/materialize.min.css">
+  <link rel="stylesheet" href="../static/css/animate.css">
+  <link href="../static/css/hover-min.css" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link rel="shortcut icon" href="{{=URL('static','images/favicon.ico')}}" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+
+  <link rel="stylesheet" href="../static/css/style-expand.css">
+  </head>
+
+  <body>
+    <nav>
+    <div class="nav-wrapper">
+        <div class="row">
+            <div class="col s6">
+                <a href="#!" class="animated"><img id="logo" src="../static/images/logoApp.png"></a>
+            </div>
+            <div class="rightBtns">
+                <div id="btnIcon" class="col s2 animated fadeInLeftBig">
+                    <a href="http://facebook.com/sharer.php?u=http://rpiarg.ddns.net/InformarQ/default/index/&t=InformarQ"><i class="zmdi zmdi-facebook"></i></a>
+                </div>
+                <div id="btnIcon" class="col s2 animated fadeInLeftBig">
+                    <a href="http://twitter.com/share?url=http://rpiarg.ddns.net/InformarQ/default/index/&text=InformarQ:"><i class="zmdi zmdi-twitter"></i></a>
+                </div>
+                <div id="btnIcon" class="col s2 animated fadeInLeftBig">
+                    <a href="https://github.com/portisk8/InformarQ"><i class="zmdi zmdi-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </nav>
+      <main> 
+      <br><br><br><br>
+    <nav class="menu-opener">
+      <div class="menu-opener-inner"></div>
+    </nav>
+    <nav class="menu">
+      <ul class="menu-inner mostrarMenu">
+        <a href="{{=URL('infoController','index')}}" class="menu-link">
+          <li>Información</li>
+        </a>
+        <a class="menu-link">
+          <li>Calendario</li>
+        </a>
+        <a href="{{=URL('mapaController','index')}}" class="menu-link">
+          <li>Mapa</li>
+        </a>
+        <a href="{{=URL('mapaController', 'bienal')}}" class="menu-link">
+          <li>Plano</li>
+        </a>
+        <a href="{{=URL('acercaDe','index')}}" class="menu-link">
+          <li>AcercaDe</li>
+        </a>
+      </ul>
+    </nav>
+    
+    <br><br>
+    <div id="ocultar" class="container">
+    <i id="icon" class="fa fa-qrcode"></i>
+    <div class="photo"></div>
+    <p><br>Lanzando Escaner QR 🙂.<br>.. .. ..</p>
+    </div>
+    <br><br>
+    </main>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="../static/js/menu-opener.js"></script>
+
+    <div id="foter" class="col s12">
+          <div class="animated fadeInLeftBig">
+              <a href="#!" class="brand-logo"><img id="logo1" src="../static/images/infor2016.png"></a>
+          </div>
+    </div>
+  </body>
+</html>

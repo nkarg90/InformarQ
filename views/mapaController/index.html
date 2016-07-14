@@ -1,0 +1,403 @@
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="{{=URL('static','js/jquery.js')}}"></script>
+    <script src="{{=URL('static','js/materialize.min.js')}}"></script>
+    <link rel="stylesheet" href="{{=URL('static','css/materialize.min.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','css/mapa.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','css/animate.css')}}">
+    <link href="../static/css/hover-min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{=URL('static','images/favicon.ico')}}" type="image/x-icon">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Mapa Ubicaciones 2016</title>
+  </head>
+  <body class="container">  
+  
+    <div class="infor row card miColorCard animated zoomInDown" >
+     <div class="row">
+        <div class="col s3">
+          <a id="servicio" class="waves-effect waves-light miColorBotonTop btn bottom-btn tooltipped hvr-wobble-skew" data-position="bottom" data-delay="50" data-tooltip="Estacion de Servicio"><i class="material-icons">ev_station </i></a>
+        </div>
+        <div class="col s3">
+          <a id="bar" class="btn waves-effect waves-light miColorBotonTop btn bottom-btn tooltipped hvr-wobble-skew" data-position="bottom" data-delay="50" data-tooltip="Bares"><i class="material-icons">local_bar</i></a>
+        </div>
+        <div class="col s3">
+          <a id="transporte" class="waves-effect waves-light miColorBotonTop btn bottom-btn tooltipped hvr-wobble-skew" data-position="bottom" data-delay="50" data-tooltip="Transporte"><i class="material-icons">directions_car</i></a>
+        </div>
+        <div class="col s3">
+          <a id="restaurant" class="waves-effect waves-light miColorBotonTop btn bottom-btn tooltipped hvr-wobble-skew" data-position="bottom" data-delay="50" data-tooltip="Restaurantes"><i class="material-icons">restaurant</i></a>
+        </div>
+      </div>
+    </div>
+    <!--MAPA-->
+    <!--MAPA-->
+    <div class="card miColorCardCale">
+        <div class=" animated fadeIn">
+          <div id="map"></div>
+        </div>
+    </div>
+    <!--BOTONES FOOTER-->
+
+    <div class="infor row">
+      <!--Boton de Descarga de mapa-->
+        <div class="col s4 offset-s2">
+          <a href="{{=URL('static', 'construction.html')}}" class="waves-effect waves-light miColorBotonFunction btn bottom-btn tooltipped hvr-float" data-position="bottom" data-delay="50" data-tooltip="Guardar Mapa"><i class="material-icons">map
+          </i></a>
+        </div> 
+      <!--Boton de Trazar Ruta-->
+       <div class="col s4">
+          <a href="#" class="waves-effect waves-light miColorBotonFunction btn bottom-btn tooltipped hvr-float" data-position="bottom" data-delay="50" data-tooltip="Ruta"><i class="material-icons">near_me
+          </i></a>
+        </div>
+    </div>
+    <!--Boton de Got to Home-->
+     <a href="{{=URL('default','index')}}" class="btn-floating btn-large waves-effect waves-light miColorBotonHome right fixed-btn-bottom"><i class="material-icons">home</i></a>
+   
+     </div>
+
+<!-- GMAP-->
+<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+<script src="{{=URL('static','js/gmaps.js')}}"></script>
+
+<!--When Button 1 is clicked, this script is activated-->
+<script>
+/*Inicializa el GMaps*/
+  $(document).ready(function(){
+    map = new GMaps({
+      div: '#map',
+      lat:-27.4374589 ,
+      lng: -58.9829753
+    });
+    map.addMarker({
+                                            lat: -27.438003,
+                                            lng: -58.980513,
+                                            title: 'Bienal 2016!',
+                                            infoWindow: {
+                                                content: '<p>Usted está aqui.</p><p>Haga click en el boton para ver el marcador que desee.'
+                                            }
+                                          });
+        /*------Style Gmap-------*/
+      var styles = [
+  {
+    featureType: "all",
+    stylers: [
+      { saturation: -80 }
+    ]
+  },{
+    featureType: "road.arterial",
+    elementType: "geometry",
+    stylers: [
+      { hue: "#00ffee" },
+      { saturation: 50 }
+    ]
+  },{
+    featureType: "poi.business",
+    elementType: "labels",
+    stylers: [
+      { visibility: "off" }
+    ]
+  }
+];
+map.setOptions({styles: styles});
+/*-------------*/
+
+  });
+/*Muestra Marcadores de Bares*/
+  $('#bar').click(function(){
+    map = new GMaps({
+      div: '#map',
+      lat:-27.4374589 ,
+      lng: -58.9829753
+    });
+        /*------Style Gmap-------*/
+      var styles = [
+  {
+    featureType: "all",
+    stylers: [
+      { saturation: -80 }
+    ]
+  },{
+    featureType: "road.arterial",
+    elementType: "geometry",
+    stylers: [
+      { hue: "#00ffee" },
+      { saturation: 50 }
+    ]
+  },{
+    featureType: "poi.business",
+    elementType: "labels",
+    stylers: [
+      { visibility: "off" }
+    ]
+  }
+];
+map.setOptions({styles: styles});
+/*-------------*/
+      $.getJSON('{{=URL('mapaController','getBares')}}',
+              function(data){
+                              map.addMarker({
+                                            lat: -27.438003,
+                                            lng: -58.980513,
+                                            title: 'Bienal 2016',
+                                            infoWindow: {
+                                                content: '<p>Usted esta Aqui</p>'
+                                            }
+                                          });
+                              /*--------------*/
+                              var len = data.length;
+                              for(i=0; i< len ; i++){
+                              var lat = data[i].lat;
+                              var lng = data[i].lng;
+                              var title = data[i].title;
+                              var info = data[i].infoWindow;
+                              var ico = data[i].icon;
+                                  map.addMarker({
+                                    lat: lat,
+                                    lng: lng,
+                                    title:title,
+                                    infoWindow : info,
+                                    icon:ico,
+                                    click: function(e){
+                                      map.removePolylines();
+                                      /*alert(this.position);*/
+                                      map.drawRoute({
+                                        origin: [-27.438003, -58.980513],
+                                        destination: [this.position.lat(), this.position.lng()],
+                                        travelMode: 'driving',
+                                        strokeColor: '#3f62d7',
+                                        strokeOpacity: 0.6,
+                                        strokeWeight: 6
+                                      })
+                                    }
+                                  })
+                                
+                              }
+                            }
+      );
+  });
+  /*Muestra Marcadores de restaurantes*/
+  $('#restaurant').click(function(){
+    map = new GMaps({
+      div: '#map',
+      lat:-27.4374589 ,
+      lng: -58.9829753
+    });
+    /*------Style Gmap-------*/
+      var styles = [
+  {
+    featureType: "all",
+    stylers: [
+      { saturation: -80 }
+    ]
+  },{
+    featureType: "road.arterial",
+    elementType: "geometry",
+    stylers: [
+      { hue: "#00ffee" },
+      { saturation: 50 }
+    ]
+  },{
+    featureType: "poi.business",
+    elementType: "labels",
+    stylers: [
+      { visibility: "off" }
+    ]
+  }
+];
+map.setOptions({styles: styles});
+/*-------------*/
+      $.getJSON('{{=URL('mapaController','getRestaurantes')}}',
+              function(data){
+                              map.addMarker({
+                                            lat: -27.438003,
+                                            lng: -58.980513,
+                                            title: 'Bienal 2016',
+                                            infoWindow: {
+                                                content: '<p>Usted está aqui.</p>'
+                                            }
+                                          });
+                              /*--------------*/
+                              var len = data.length;
+                              for(i=0; i< len ; i++){
+                              var lat = data[i].lat;
+                              var lng = data[i].lng;
+                              var title = data[i].title;
+                              var info = data[i].infoWindow;
+                              var ico = data[i].icon;
+                                  map.addMarker({
+                                    lat: lat,
+                                    lng: lng,
+                                    title:title,
+                                    infoWindow : info,
+                                    icon:ico,
+                                    click: function(e){
+                                      map.removePolylines();
+                                      /*alert(this.position);*/
+                                      map.drawRoute({
+                                        origin: [-27.438003, -58.980513],
+                                        destination: [this.position.lat(), this.position.lng()],
+                                        travelMode: 'driving',
+                                        strokeColor: '#3f62d7',
+                                        strokeOpacity: 0.6,
+                                        strokeWeight: 6
+                                      })
+                                    }
+                                  })
+                                
+                              }
+                            }
+      );
+
+  });
+  /*Muestra Marcadores de Estaciones de Servicios*/
+  $('#servicio').click(function(){
+    map = new GMaps({
+      div: '#map',
+      lat:-27.4374589 ,
+      lng: -58.9829753
+    });
+        /*------Style Gmap-------*/
+      var styles = [
+  {
+    featureType: "all",
+    stylers: [
+      { saturation: -80 }
+    ]
+  },{
+    featureType: "road.arterial",
+    elementType: "geometry",
+    stylers: [
+      { hue: "#00ffee" },
+      { saturation: 50 }
+    ]
+  },{
+    featureType: "poi.business",
+    elementType: "labels",
+    stylers: [
+      { visibility: "off" }
+    ]
+  }
+];
+map.setOptions({styles: styles});
+/*-------------*/
+      $.getJSON('{{=URL('mapaController','getServicio')}}',
+              function(data){
+                              map.addMarker({
+                                            lat: -27.438003,
+                                            lng: -58.980513,
+                                            title: 'Bienal 2016!',
+                                            infoWindow: {
+                                                content: '<p>Usted está aqui.</p>'
+                                            }
+                                          });
+                              /*--------------*/
+                              var len = data.length;
+                              for(i=0; i< len ; i++){
+                              var lat = data[i].lat;
+                              var lng = data[i].lng;
+                              var title = data[i].title;
+                              var info = data[i].infoWindow;
+                              var ico = data[i].icon;
+                                  map.addMarker({
+                                    lat: lat,
+                                    lng: lng,
+                                    title:title,
+                                    infoWindow : info,
+                                    icon:ico,
+                                    click: function(e){
+                                      map.removePolylines();
+                                      /*alert(this.position);*/
+                                      map.drawRoute({
+                                        origin: [-27.438003, -58.980513],
+                                        destination: [this.position.lat(), this.position.lng()],
+                                        travelMode: 'driving',
+                                        strokeColor: '#3f62d7',
+                                        strokeOpacity: 0.6,
+                                        strokeWeight: 6
+                                      })
+                                    }
+                                  })
+                                
+                              }
+                            }
+      );
+  });
+  /*Muestra Marcadores de Transporte*/
+  $('#transporte').click(function(){
+    map = new GMaps({
+      div: '#map',
+      lat:-27.4374589 ,
+      lng: -58.9829753
+    });
+        /*------Style Gmap-------*/
+      var styles = [
+  {
+    featureType: "all",
+    stylers: [
+      { saturation: -80 }
+    ]
+  },{
+    featureType: "road.arterial",
+    elementType: "geometry",
+    stylers: [
+      { hue: "#00ffee" },
+      { saturation: 50 }
+    ]
+  },{
+    featureType: "poi.business",
+    elementType: "labels",
+    stylers: [
+      { visibility: "off" }
+    ]
+  }
+];
+map.setOptions({styles: styles});
+/*-------------*/
+      $.getJSON('{{=URL('mapaController','getTransporte')}}',
+              function(data){
+                              map.addMarker({
+                                            lat: -27.438003,
+                                            lng: -58.980513,
+                                            title: 'Bienal 2016!',
+                                            infoWindow: {
+                                                content: '<p>Usted está aqui.</p>'
+                                            }
+                                          });
+                              /*--------------*/
+                              var len = data.length;
+                              for(i=0; i< len ; i++){
+                              var lat = data[i].lat;
+                              var lng = data[i].lng;
+                              var title = data[i].title;
+                              var info = data[i].infoWindow;
+                              var ico = data[i].icon;
+                                  map.addMarker({
+                                    lat: lat,
+                                    lng: lng,
+                                    title:title,
+                                    infoWindow : info,
+                                    icon:ico,
+                                    click: function(e){
+                                      map.removePolylines();
+                                      /*alert(this.position);*/
+                                      map.drawRoute({
+                                        origin: [-27.438003, -58.980513],
+                                        destination: [this.position.lat(), this.position.lng()],
+                                        travelMode: 'walking',
+                                        strokeColor: '#3f62d7',
+                                        strokeOpacity: 0.6,
+                                        strokeWeight: 6
+                                      })
+                                    }
+                                  })
+                                
+                              }
+                            }
+      );
+  });
+</script>
+  
+  </body>
+</html>

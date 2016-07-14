@@ -1,0 +1,599 @@
+timestamp: 2016-05-19T14:50:14.459000
+CREATE TABLE auth_user(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    first_name CHAR(128),
+    last_name CHAR(128),
+    email CHAR(512),
+    password CHAR(512),
+    registration_key CHAR(512),
+    reset_password_key CHAR(512),
+    registration_id CHAR(512)
+);
+success!
+timestamp: 2016-05-19T14:50:14.615000
+CREATE TABLE auth_group(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    role CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2016-05-19T14:50:14.795000
+CREATE TABLE auth_membership(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  
+);
+success!
+timestamp: 2016-05-19T14:50:14.943000
+CREATE TABLE auth_permission(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    group_id INTEGER REFERENCES auth_group (id) ON DELETE CASCADE  ,
+    name CHAR(512),
+    table_name CHAR(512),
+    record_id INTEGER
+);
+success!
+timestamp: 2016-05-19T14:50:15.095000
+CREATE TABLE auth_event(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    time_stamp TIMESTAMP,
+    client_ip CHAR(512),
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    origin CHAR(512),
+    description TEXT
+);
+success!
+timestamp: 2016-05-19T14:50:15.243000
+CREATE TABLE auth_cas(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER REFERENCES auth_user (id) ON DELETE CASCADE  ,
+    created_on TIMESTAMP,
+    service CHAR(512),
+    ticket CHAR(512),
+    renew CHAR(1)
+);
+success!
+timestamp: 2016-06-06T22:43:17.218000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    tipo_Estable TEXT,
+    descripcion TEXT,
+    telefono TEXT,
+    pdf CHAR(512),
+    lat TEXT,
+    lon TEXT
+);
+success!
+timestamp: 2016-06-06T23:42:50.956000
+ALTER TABLE place ADD lng TEXT;
+timestamp: 2016-06-06T23:42:51.161000
+ALTER TABLE place ADD description TEXT;
+timestamp: 2016-06-06T23:42:51.300000
+ALTER TABLE place ADD name TEXT;
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-06-06T23:49:34.635000
+ALTER TABLE place ADD tel TEXT;
+timestamp: 2016-06-06T23:49:34.807000
+ALTER TABLE place ADD direccion TEXT;
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+success!
+timestamp: 2016-06-07T13:15:33.168000
+CREATE TABLE info(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    archivo CHAR(512)
+);
+success!
+timestamp: 2016-06-07T13:15:33.309000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:15:47.121000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:16:33.166000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:17:15.428000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:17:33.178000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:18:33.144000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:19:33.163000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:20:33.171000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:21:33.169000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:22:33.177000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:23:33.183000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:24:33.157000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:25:33.159000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:26:33.163000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:27:33.156000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:28:33.165000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:29:33.169000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:30:33.169000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:31:33.158000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:32:33.162000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:33:33.167000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:34:33.164000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:35:33.192000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:36:33.164000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:37:33.181000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:38:33.200000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:39:33.163000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:40:33.178000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:41:33.178000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:42:33.163000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:43:33.168000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:44:33.162000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:45:33.159000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:46:33.157000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:47:33.186000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:48:33.162000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:49:33.161000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:50:33.216000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:51:33.168000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:52:33.166000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:53:33.213000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:54:33.156000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:55:33.174000
+CREATE TABLE place(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+timestamp: 2016-06-07T13:56:19.369000
+CREATE TABLE mapa(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre TEXT,
+    descripcion TEXT,
+    lat TEXT,
+    lng TEXT,
+    pdf CHAR(512),
+    tel TEXT,
+    direccion TEXT
+);
+success!
+success!
+timestamp: 2016-06-08T17:55:09.990000
+ALTER TABLE mapa ADD tipo TEXT;
+success!

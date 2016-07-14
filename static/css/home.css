@@ -1,0 +1,39 @@
+body {
+	background-image: url('../images/Wallpaper-iQ2.png');
+	background-size: 1850px;
+    background-repeat: none;
+ }
+
+.infor i.material-icons {
+  font-size: 1.9rem;
+}
+
+.infor a.waves-effect.waves-yellow.btn {
+    margin-bottom: -2%;
+  
+}
+
+.bottom-btn{
+  padding: 10px 15px !important;  
+  height: 56px;
+  margin-top: 40%;
+}
+
+.fixed-btn-bottom{
+  margin-bottom: 50px;
+  }
+
+.fixed-action-btn{
+  left: 50px;
+  }
+
+#menubot{
+  height: 100px;
+  margin-top: 3%;
+  left:50px;
+}
+#logo{
+  width: 3%;
+  z-index: 1;
+}
+

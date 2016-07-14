@@ -1,0 +1,62 @@
+.infor a{
+  margin: 0 auto;
+  display: block;
+  padding: 0px;
+  margin: 10px;
+  text-align: center;
+}
+
+body {
+  background-image: url('../images/wall.jpg');
+  background-size: static;
+  background-repeat: none;
+}
+
+.infor i.material-icons {
+  font-size: 1.9rem;
+}
+
+.infor a.waves-effect.waves-light.btn {
+    margin-bottom: -2%;
+}
+
+
+.bottom-btn{
+  padding: 10px 15px !important;  
+  height: 56px;
+}
+
+.fixed-btn-bottom{
+  margin-bottom: 30px;
+}
+
+video{
+  max-width: 100%;
+  height: auto;
+
+}
+
+/* Google Material Icon Font 
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url('../static/fonts/material.woff2') format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+*/

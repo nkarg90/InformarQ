@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="../static/js/jquery.js"></script>
+        <script src="../static/js/materialize.min.js"></script>
+        <script src="../static/js/jsdefmenu.js"></script>
+        <link rel="stylesheet" href="../static/css/materialize.min.css">
+        <link rel="stylesheet" href="../static/css/css_defmenu.css">
+        <link rel="stylesheet" href="../static/css/animate.css">
+        <link href="../static/css/hover-min.css" rel="stylesheet">
+        <link href="../static/css/ihover.min.css" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+        <link rel="shortcut icon" href="{{=URL('static','images/favicon.ico')}}" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+        <title>InformarQ</title>
+    </head>
+
+    <body>
+    <nav>
+    <div class="nav-wrapper">
+        <div class="row">
+            <div class="col s6">
+                <a href="#!" class="animated"><img id="logo" src="../static/images/logoApp.png"></a>
+            </div>
+            <div class="rightBtns">
+                <div id="btnIcon" class="col s2 animated fadeInLeftBig">
+                    <a href="http://facebook.com/sharer.php?u=http://rpiarg.ddns.net/InformarQ/default/index/&t=InformarQ"><i class="zmdi zmdi-facebook"></i></a>
+                </div>
+                <div id="btnIcon" class="col s2 animated fadeInLeftBig">
+                    <a href="http://twitter.com/share?url=http://rpiarg.ddns.net/InformarQ/default/index/&text=InformarQ:"><i class="zmdi zmdi-twitter"></i></a>
+                </div>
+                <div id="btnIcon" class="col s2 animated fadeInLeftBig">
+                    <a href="https://github.com/portisk8/InformarQ"><i class="zmdi zmdi-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </nav> 
+
+    <main>
+    <div class="container">
+    	<div class="row panorama ">
+    		<div class="col s6 m4">
+                <a href="{{=URL('infoController','index')}}" class="link card waves-effect waves-light panorama image1 hvr-float"></a>
+    		</div>
+    		<div class="col s6 m8">
+    			<a href="{{=URL('acercade','index')}}" class="link card waves-effect waves-light panorama image2 hvr-float"></a>
+    		</div>
+    		<div class="col s6 m8">
+    			<a href="{{=URL('cronoController','index')}}" class="link card waves-effect waves-light panorama image3 hvr-float"></a>
+    		</div>
+    		<div class="col s6 m4">
+    			<a href="{{=URL('mapaController','index')}}" class="link card waves-effect waves-light panorama image4 hvr-float"></a>
+    		</div>
+    		<div class="col s6 m4">
+    			<a href="{{=URL('mapaController', 'bienal')}}" class="link card waves-effect waves-light panorama image5 hvr-float"></a>
+    		</div>
+    		<!-- <div class="col s6 m8">
+    			<a href="#" class="link card waves-effect waves-light panorama image6 hvr-float"></a>
+    		</div> -->
+    	</div>
+    </div> 
+    </main>
+
+    <div id="foter" class="col s12">
+        <div class="row">
+        	<div id="contact" class="col l6 s12 animated fadeInRightBig">
+        	    <h5 class="white-text">Contact</h5>
+        	    <p class="grey-text text-lighten-4">in.develop.g@gmail.com</p>
+        	</div>
+        	<div class="col l4 offset-l2 s12 animated fadeInLeftBig">
+        	    <center><a href="#!" class="brand-logo"><img id="logo1" src="../static/images/infor2016.png"></a></center>
+        	</div>
+        </div>
+    </div>
+    </body>
+</html>

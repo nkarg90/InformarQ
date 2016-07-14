@@ -1,0 +1,42 @@
+body {
+	background-image: url('../images/../images/wall.jpg');
+	background-size: 1850px;
+    background-repeat: none;
+ }
+
+..demo-layout-transparent {
+  background: url('../assets/demos/transparent.jpg') center / cover;
+}
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: white;
+}
+
+.infor i.material-icons {
+  font-size: 1.9rem;
+}
+
+.infor a.waves-effect.waves-yellow.btn {
+    margin-bottom: -2%;
+  
+}
+
+.bottom-btn{
+  padding: 10px 15px !important;  
+  height: 56px;
+  margin-top: 17%;
+
+}
+
+.fixed-btn-bottom{
+  margin-bottom: 30px;
+  }
+
+#cplano{
+
+
+}
+
+#mapa{}

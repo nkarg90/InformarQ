@@ -1,0 +1,66 @@
+body {
+  background-image: url("../images/wlp/wl2.jpg");
+  background-repeat: no-repeat;
+  ­webkit­background­size:cover;
+  ­moz­background­size:cover;
+  ­o­background­size:cover;
+  background­size:cover;    
+  background­position:center;
+}
+
+.infor i.material-icons {
+  font-size: 1.9rem;
+}
+
+.infor a.waves-effect.waves-light.btn {
+    margin-bottom: -2%;
+}
+
+.bottom-btn{
+  padding: 10px 15px !important;  
+  height: 56px;
+}
+
+.fixed-btn-bottom{
+  margin-bottom: 30px;
+    margin-right: 50px;
+}
+.infor a{
+  margin: 0 auto;
+  display: block;
+  padding: 0px;
+  margin: 10px;
+  text-align: center;
+}
+.contenido.cronograma{
+    padding: 20px 10px; 
+}
+
+.collapsible-header {
+    border: none;
+    background-color: rgba(21, 49, 53, 0.31);
+    color: white;
+}
+.collapsible-body{
+  border: none;
+  color: white;
+}
+.card{
+    margin: 10px 10px;
+}
+
+#mobileImg{
+    width: 100%;
+}
+
+.miColorBotonHome{
+background-color: rgba(0,45,45,0.60);
+}
+
+.miColorBotonFunction{
+background-color: rgba(0, 0, 0, 0.5);
+}
+
+.miColorCard {
+    background-color: hsla(0, 0%, 0%, 0.5) !important;
+}

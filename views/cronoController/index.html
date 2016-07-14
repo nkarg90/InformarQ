@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../static/css/hover-min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{=URL('static','images/favicon.ico')}}" type="image/x-icon">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="{{=URL('static','css/animate.css')}}">
+    <script src='../static/js/jquery.min.js'></script>
+    <script src='../static/js/cronograma.js'></script>
+    <script src="{{=URL('static','js/materialize.min.js')}}"></script>
+    <link rel="stylesheet" href="{{=URL('static','css/materialize.min.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','css/cronograma.css')}}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Cronograma Actividades Bienal 2016</title>
+   <!--  <link href='../static/css/materialize.min.css' rel='stylesheet' media='print' />
+    <link href='../static/css/cronoController.css' rel='stylesheet' media='print' />
+    <script src='../static/js/materialize.min.js'></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+
+  </head>
+  <body class="container">    
+  
+    <div class="infor row card miColorCard animated zoomInDown" >
+     <div class="row">
+        <div class="col s6">
+          <a class="waves-effect waves-light miColorBotonTop btn bottom-btn tooltipped hvr-wobble-skew" data-position="bottom" data-delay="50" data-tooltip="Cronograma" onclick="clickCalendar();"><i class="material-icons">event_note</i></a>
+          </div>
+          <div class="col s6">
+          <a class="waves-effect waves-light miColorBotonTop btn bottom-btn tooltipped hvr-wobble-skew" data-position="bottom" data-delay="50" data-tooltip="Actividades Paralelas" onclick="clickDescription();"><i class="material-icons">supervisor_account</i></a>
+          </div>
+      </div>
+    </div>
+
+    <div class="miContainer row">
+      <div class="card miColorCardCale">
+            <div class="card-content white-text">
+              <span class="card-title cronograma titulo">Cronograma de Actividades</span>
+              <p class="cronograma subtitulo">Aqui puedes sincronizar las actividades que mas te gusten con el calendario de tu celular!</p>
+            </div>
+           <div class="contenido cronograma clearfix animated zoomIn"> 
+             <iframe class="goocalendario" src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=ai0mvckkfkv1f074r24tcoalpc%40group.calendar.google.com&amp;color=%2342104A&amp;ctz=America%2FArgentina%2FBuenos_Aires" frameborder="0" scrolling="no"></iframe>
+           </div>
+      </div>
+    </div>
+
+    <!--BOTONES FOOTER-->
+    <div class="crono row">
+        <div class="col s4">
+          <a href="http://www.bienaldelchaco.org/actividades-formulario-de-inscripcion/" class="waves-effect waves-light miColorBotonFunction btn bottom-btn tooltipped hvr-float" data-position="bottom" data-delay="50" data-tooltip="Inscripción"><i class="material-icons">create
+          </i></a>
+        </div>
+        <div class="col s4">
+          <a href="{{=URL('download_pdf')}}" class="waves-effect waves-light miColorBotonFunction btn bottom-btn tooltipped hvr-float" data-position="bottom" data-delay="50" data-tooltip="Descargar Cronograma"><i class="material-icons">picture_as_pdf
+          </i></a>
+        </div>
+        <div class="col s4">
+          <a href="https://docs.google.com/uc?export=download&id=0B-yYTbFoIjArcUhYLXNSbUUxaHM" class="waves-effect waves-light miColorBotonFunction btn bottom-btn tooltipped hvr-float" data-position="bottom" data-delay="50" data-tooltip="Sincronizar Actividades"><i class="material-icons">sync
+          </i></a>
+        </div>
+    </div>
+     <a href="{{=URL('default','index')}}" class="btn-floating btn-large waves-effect waves-light miColorBotonHome right fixed-btn-bottom"><i class="material-icons">home</i></a>
+   
+     </div>
+
+<!--..........BOTONES BAJOS..............-->
+  
+  </body>
+</html>

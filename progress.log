@@ -1,0 +1,15 @@
+[2016-06-02 09:01:06] START
+[2016-06-02 11:03:28] CREATE infController.py: 0
+[2016-06-02 11:03:47] EDIT InformarQ/controllers/infController.py: 1
+[2016-06-02 11:04:05] CREATE infoController/index.html: 0
+[2016-06-06 22:36:08] CREATE place.py: 0
+[2016-06-07 13:07:11] EDIT InformarQ/models/db.py: 4
+[2016-06-07 13:12:43] EDIT InformarQ/models/db.py: 0
+[2016-06-07 13:15:05] EDIT InformarQ/models/db.py: 0
+[2016-06-08 17:54:59] EDIT InformarQ/models/db.py: 2
+[2016-06-09 22:29:47] EDIT AppBienal/views/cronoController/index.html: 0
+[2016-06-09 22:32:12] CREATE cronoController.py: 0
+[2016-06-09 22:32:43] EDIT AppBienal/controllers/cronoController.py: 1
+[2016-06-21 11:50:07] CREATE acercade/index.html: 0
+[2016-07-12 18:09:31] EDIT App/controllers/default.py: 2
+[2016-07-14 11:11:13] EDIT App/controllers/default.py: 0

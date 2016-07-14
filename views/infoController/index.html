@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/materialize.min.js"></script>
+    <script src="../static/js/informacion.js"></script>
+    <link rel="stylesheet" href="../static/css/materialize.min.css">
+    <link rel="stylesheet" href="../static/css/informacion.css">
+    <link rel="stylesheet" href="{{=URL('static','css/animate.css')}}">
+    <link href="../static/css/hover-min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="{{=URL('static','images/favicon.ico')}}" type="image/x-icon">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Información Bienal 2016</title>
+  </head>
+  <body class="container">    
+  
+    <div class="infor row card miColorCard animated zoomInDown">
+     <div class="row">
+        <div class="col s4">
+          <a class="waves-effect waves-light miColorBotonTop btn bottom-btn tooltipped hvr-wobble-skew" onclick="btn1Click();" data-position="bottom" data-delay="50" data-tooltip="Fundación Urunday"><i class="material-icons">account_balance</i></a>
+        </div>
+        <div class="col s4">
+          <a class="waves-effect waves-light miColorBotonTop btn bottom-btn tooltipped hvr-wobble-skew" onclick="btn2Click();" data-position="bottom" data-delay="50" data-tooltip="Bienal 2016"><i class="material-icons">streetview</i></a>
+        </div>
+        <div class="col s4">
+          <a class="waves-effect waves-light miColorBotonTop btn bottom-btn tooltipped hvr-wobble-skew" onclick="btn3Click();" data-position="bottom" data-delay="50" data-tooltip="Bienal 2014"><i class="material-icons">fast_forward</i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card hoverable white">
+      <div class="card-image waves-effect waves-block waves-light">
+        <div id="cardEffect" class="activator animated zoomIn"><img id="cardImage" src="../static/images/card.png"></div>
+      </div>
+      <div class="card-content">
+        <span class="card-title activator grey-text text-darken-4"><strong id="cardTitle">Bienal 2016</strong><i class="material-icons right">more_vert</i></span>
+        <p id="cardContent"></p>
+        <p><br></p>
+        <div class="card-action">
+              <a id="cardWLink" href="#"><span id="cardLink" class="hvr-bob">+Info Bienal</span></a>
+        </div>
+      </div>
+      <div class="card-reveal miColorCardExpandida">
+        <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+        <p><br></p>
+        <div id="cardHtml"><h4>Bienal 2016</h4><p>Los primeros monumentos urbanos(1920) fueron erigidos por la <i>Colectividad Italiana</i>, los cuales tuvieron el carácter recordatorio de las gestas inmigrantes. A partir de 1961, la historia local comenzó a concretarse con monumentos dedicados a próceres argentinos. En 1961, El Fogón de los Arrieros lanzo un <b>"Plan de Embellecimiento"</b>, donde primaba,en cierta forma crear una <i>"Ciudad-Museo"</i>. Desde el Primer Concurso de Escultura en Madera en la Plaza Central, en 1988, hasta las Bienales internacionales en la actualidad, El Gobierno de la Provincia del Chaco y la Fundación Urunday trabajan incansablemente para hacer de cada Bienal una verdadera celebración de la identidad de los chaqueños. La Bienal 2016 convoca a once artistas consagrados internacionalmente, representando a distintos paises del mundo, quienes realizarán a cielo abierto, una escultura inspirandose en el equilibrio. El material a trabajar es el mármol,con el concepto de <i>"Equilibrium"</i> reconocido como  el cobijo de la armonia, el balance.</p><center><video class="responsive-video" controls><source src="../static/video/Bienal2016.mp4" type="video/mp4"></video></center>         
+        </div>
+      </div>
+    </div>
+    
+    <div class="infor row">
+      <!--WEB-->
+        <a href="{{=URL('download_pdf')}}" class="waves-effect waves-light miColorBotonFunction btn col s4 offset-s4 m2 offset-m5 bottom-btn tooltipped hvr-float" data-position="bottom" data-delay="50" data-tooltip="Descarga Información"><i class="material-icons">picture_as_pdf</i></a>
+        <!--Mobile-->
+        <!-- <a href="javascript:openUrl()" class="waves-effect waves-light btn col s12 bottom-btn tooltipped animated bounceIn" data-position="bottom" data-delay="50" data-tooltip="Descarga Información"><i class="material-icons">picture_as_pdf</i></a> -->
+    </div>
+
+     <a href="{{=URL('default','index')}}" class="btn-floating btn-large waves-effect waves-light miColorBotonHome right fixed-btn-bottom hide-on-small-only"><i class="material-icons">home</i></a>
+   
+    </div>
+    <script >
+    function openUrl(){
+      window.open("http://192.168.2.27:8000/InformarQ/infoController/download_pdf", '_system', 'location=no,zoom=no,toolbar=no, fullscreen=true, enableViewportScale=true');
+    }
+    </script>
+</body>
+</html>
