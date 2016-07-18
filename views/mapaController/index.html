@@ -2,7 +2,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="{{=URL('static','js/jquery.js')}}"></script>
+    <script src="{{=URL('static','js/jquery-3.1.0.js')}}"></script>
     <script src="{{=URL('static','js/materialize.min.js')}}"></script>
     <link rel="stylesheet" href="{{=URL('static','css/materialize.min.css')}}">
     <link rel="stylesheet" href="{{=URL('static','css/mapa.css')}}">
@@ -70,14 +70,6 @@
       lat:-27.4374589 ,
       lng: -58.9829753
     });
-    map.addMarker({
-                                            lat: -27.438003,
-                                            lng: -58.980513,
-                                            title: 'Bienal 2016!',
-                                            infoWindow: {
-                                                content: '<p>Usted está aqui.</p><p>Haga click en el boton para ver el marcador que desee.'
-                                            }
-                                          });
         /*------Style Gmap-------*/
       var styles = [
   {
@@ -102,7 +94,47 @@
 ];
 map.setOptions({styles: styles});
 /*-------------*/
-
+      $.getJSON('{{=URL('mapaController','getAll')}}',
+              function(data){
+                              map.addMarker({
+                                            lat: -27.438003,
+                                            lng: -58.980513,
+                                            title: 'Bienal 2016',
+                                            infoWindow: {
+                                                content: '<p>Usted esta Aqui</p>'
+                                            }
+                                          });
+                              /*--------------*/
+                              var len = data.length;
+                              for(i=0; i< len ; i++){
+                              var lat = data[i].lat;
+                              var lng = data[i].lng;
+                              var title = data[i].title;
+                              var info = data[i].infoWindow;
+                              var ico = data[i].icon;
+                                  map.addMarker({
+                                    lat: lat,
+                                    lng: lng,
+                                    title:title,
+                                    infoWindow : info,
+                                    icon:ico,
+                                    click: function(e){
+                                      map.removePolylines();
+                                      /*alert(this.position);*/
+                                      map.drawRoute({
+                                        origin: [-27.438003, -58.980513],
+                                        destination: [this.position.lat(), this.position.lng()],
+                                        travelMode: 'driving',
+                                        strokeColor: '#3f62d7',
+                                        strokeOpacity: 0.6,
+                                        strokeWeight: 6
+                                      })
+                                    }
+                                  })
+                                
+                              }
+                            }
+      );
   });
 /*Muestra Marcadores de Bares*/
   $('#bar').click(function(){

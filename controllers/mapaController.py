@@ -10,15 +10,46 @@ def plano():
 def bienal():
 	return dict()
 
-def getMarkers():
+def getAll():
 	mapas = []
-	rows = db(db.mapa.id>0).select()
+	rows = db(db.mapa.tipo=='Restaurante').select()
 	for row in rows:
 		mapa = {
 			'lat': row.lat,
 			'lng': row.lng,
 			'title': row.nombre,
-			'infoWindow': { 'content': "<h1>" + row.nombre +"</h1>"+ row.tel +"<p>Direccion: "+row.direccion+"</p><p>"+row.descripcion+"</p>" },	
+			'infoWindow': { 'content': "<h4>" + row.nombre +"</h4>"+ row.tel +"<p>Direccion: "+row.direccion+"</p><p>"+row.descripcion+"</p>"},
+			'icon':'../static/icons/icon_green32.png',
+		}
+		mapas.append(mapa)
+	rows = db(db.mapa.tipo=='Estacion de Servicio').select()
+	for row in rows:
+		mapa = {
+			'lat': row.lat,
+			'lng': row.lng,
+			'title': row.nombre,
+			'infoWindow': { 'content': '<h3>' + row.nombre +'</h3>'+ row.tel +'<p>Direccion: '+row.direccion+'</p><p>'+row.descripcion+'</p>' },
+			'icon':'../static/icons/icon_pink32.png',
+		}
+		mapas.append(mapa)
+	rows = db(db.mapa.tipo=='Bar').select()
+	for row in rows:
+		mapa = {
+			'lat': row.lat,
+			'lng': row.lng,
+			'title': row.nombre,
+			'infoWindow': { 'content': "<h4>" + row.nombre +"</h4>"+ row.tel +"<p>Direccion: "+row.direccion+"</p><p>"+row.descripcion+"</p>" },
+			'icon':'../static/icons/icon_lightblue323.png',
+		}
+		mapas.append(mapa)
+	rows = db(db.mapa.tipo=='Transporte').select()
+	for row in rows:
+		mapa = {
+			'lat': row.lat,
+			'lng': row.lng,
+			'title': row.nombre,
+			'infoWindow': { 'content': "<h4>" + row.nombre +"</h4>"+ row.tel +"<p>Direccion: "+row.direccion+"</p><p>"+row.descripcion+"</p>" },
+			'icon':'../static/icons/icon_yellow32.png',
 		}
 		mapas.append(mapa)
 	return response.json(mapas)
@@ -60,7 +91,7 @@ def getBares():
 			'lng': row.lng,
 			'title': row.nombre,
 			'infoWindow': { 'content': "<h4>" + row.nombre +"</h4>"+ row.tel +"<p>Direccion: "+row.direccion+"</p><p>"+row.descripcion+"</p>" },
-			'icon':'../static/icons/icon_lightblue32.png',
+			'icon':'../static/icons/icon_lightblue323.png',
 		}
 		mapas.append(mapa)
 	return response.json(mapas)
@@ -74,6 +105,7 @@ def getTransporte():
 			'lng': row.lng,
 			'title': row.nombre,
 			'infoWindow': { 'content': "<h4>" + row.nombre +"</h4>"+ row.tel +"<p>Direccion: "+row.direccion+"</p><p>"+row.descripcion+"</p>" },
+			'icon':'../static/icons/icon_yellow32.png',
 		}
 		mapas.append(mapa)
 	return response.json(mapas)
