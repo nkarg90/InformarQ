@@ -343,3 +343,8 @@ nav {
     height: 150px;
   }
 }
+
+@media only screen and (max-width: 350px){
+.esconder {
+   display: none !important;
+}}
